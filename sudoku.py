@@ -32,19 +32,20 @@ while True:
             if len(currentAvailableDigits) == 1:
                 removeDigitNum = currentAvailableDigits[0]
                 currentNavigator = navigator.navigator(i, j)
+
                 for positions in currentNavigator.getAllPositions():
                     currentNavDigit = digits[positions[0]][positions[1]]
                     currentChanged = currentNavDigit.removeAvailableDigit(removeDigitNum)
                     if (currentChanged == True):
                         changed = True
+
     count += 1
     print count
     myTabler.drawDebug()
     if (changed == False) or (count>1000):
         break
 
-
-currentDigit = digits[8][6]
-print currentDigit.getAvailableDigits()
-
+print ""
+print "Current result"
 myTabler.drawResult()
+
